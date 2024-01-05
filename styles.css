@@ -152,7 +152,7 @@ h1{
 /* Responsive media query */
 @media only screen and (max-width: 600px) {
     #sidebar {
-        width: 35%;
+        width: 25%;
                
     }
 
@@ -168,20 +168,21 @@ h1{
     }
     body{
         overflow: hidden;
+        box-sizing: border-box;
     }
-    .shows li{
+    .show li{
        
         width: 10%;
         display: block;
         
     }
-    .shows img{
+    .show img{
         width: 50%;
     }
-    .shows h3{
+    .show h3{
         font-size: 0.8rem;
     }
-    .shows p{
+    .show p{
         font-size: 0.5rem;
     }
     #main2 h1,#main h1{
@@ -218,8 +219,36 @@ h1{
     .netfliximg,.h1,.h0{
         opacity: 0;
     }
-    
 
 
 
+}
+
+/* Default styles for desktop view */
+.shows-list {
+    display: flex;
+    flex-wrap: nowrap; /* Ensures items are in a single row */
+    list-style: none;
+    padding-left: 150px;
+}
+
+.show {
+    flex: 0 0 16%; /* Adjust the width as per your design */
+    margin-right: 10px; /* Add some spacing between items */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .shows-list {
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+    }
+
+    .show {
+        flex: 0 0 100%; /* Make each item take up the full width */
+        margin-right: 0; /* Remove the right margin to ensure full width */
+        margin-bottom: 20px; /* Add some spacing between items in the column */
+    }
+    .show img{
+        width: 35% !important;
+    }
 }
